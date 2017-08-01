@@ -1,7 +1,8 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: calibri;
+    font-family: sans-serif;
+    font-size: 2.4vh;
 }
 
 header,
@@ -16,9 +17,6 @@ footer {
 
 body {
     background-color: #e5eff9;
-}
-
-header {
 }
 
 hgroup {
@@ -51,4 +49,53 @@ a {
 
 .brand:hover {
     color: #fff;
+}
+
+#form {
+    width: 50vw;
+    margin-top: 17vh;
+}
+
+.inp-txt {
+    display: block;
+}
+
+.left {
+    float: left;
+    width: 25vw;
+    margin-bottom: 5vh;
+}
+
+.right {
+    float: right;
+    width: 25vw;
+    margin-bottom: 5vh;
+}
+
+.button {
+    clear: both;
+}
+
+.inp-txt {
+    margin: 5vh 0;
+    padding: 5px;
+    width: 20vw;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    width: 20vw;
+    background: none;
+    border: none;
+        background-color: #0051a3;
+    color: aliceblue;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0066cc;
 }
