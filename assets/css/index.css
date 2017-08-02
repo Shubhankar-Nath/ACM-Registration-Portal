@@ -49,6 +49,28 @@ a {
 
 .inp-txt {
     display: block;
+    background: none;
+    border: none;
+    transition: all 0.12s linear;
+}
+
+.inp-txt:focus {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #CB7F00;
+    color: #cc6600;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.button {
+    clear: both;
 }
 
 @media only screen and (min-width: 1081px) {
@@ -66,53 +88,35 @@ a {
         width: 50vw;
         margin-top: 17vh;
     }
-}
-
-.button {
-    clear: both;
-}
-
-.inp-txt {
-    margin: 5vh 0;
-    padding: 5px;
-    width: 20vw;
-    background: none;
-    border: none;
-    border-bottom: 1px solid black;
-}
-
-.inp-txt:focus {
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #CB7F00;
-    color: #cc6600;
-}
-
-input[type="submit"] {
-    cursor: pointer;
-    width: 20vw;
-    background: none;
-    border: none;
-    border: 1px solid #0051a3;
-    //background-color: #0051a3;
-    //color: aliceblue;
-    color: #0051a3;
-    padding: 8px;
-    border-radius: 10px;
-}
-
-input[type="submit"]:hover {
-    //background-color: #0066cc;
-    background-color: #0051a3;
-    color: white;
-}
-
-input[type="submit"]:focus {
-    background-color: #0066cc;
-    outline: none;
+    .inp-txt {
+        margin: 5vh 0;
+        padding: 5px;
+        width: 20vw;
+        border-bottom: 1px solid black;
+    }
+    input[type="submit"] {
+        width: 20vw;
+        border: 1px solid #0051a3;
+        color: #0051a3;
+        padding: 8px;
+        border-radius: 10px;
+        transition: all 0.12s linear;
+    }
+    input[type="submit"]:hover {
+        background-color: #0051a3;
+        color: aliceblue;
+    }
+    input[type="submit"]:focus {
+        background-color: #0066cc;
+        color: aliceblue;
+        outline: none;
+    }
 }
 
 @media only screen and (max-width: 1080px) {
+    hgroup {
+        text-align: center;
+    }
     .left {
         width: 96vw;
     }
@@ -128,23 +132,17 @@ input[type="submit"]:focus {
     .inp-txt {
         margin: 20px 0;
         height: 7vh;
-        border: none;
         padding: 15px 10px;
         border-radius: 20px;
         width: 96vw;
         background-color: #fff;
     }
-    .inp-txt:focus {
-        outline: none;
-        border: none;
-        border: 1px solid #CB7F00;
-        color: #cc6600;
-    }
     input[type="submit"] {
         width: 96vw;
         height: 5vh;
-    }
-    hgroup {
-        text-align: center;
+        background-color: #0051a3;
+        color: aliceblue;
+        padding: 8px;
+        border-radius: 10px;
     }
 }
