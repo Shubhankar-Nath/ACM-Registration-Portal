@@ -7,7 +7,6 @@
 
 header,
 hgroup,
-nav,
 section,
 aside,
 article,
@@ -17,6 +16,10 @@ footer {
 
 body {
     background-color: #e5eff9;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
 }
 
 hgroup {
@@ -47,6 +50,16 @@ a {
     font-size: 4vh;
 }
 
+#gif {
+    padding: 0;
+    background-image: url("../images/bg.jpg");
+    height: 50vh;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: filter 0.12s linear;
+}
+
 .inp-txt {
     display: block;
     background: none;
@@ -57,8 +70,15 @@ a {
 .inp-txt:focus {
     outline: none;
     border: none;
-    border-bottom: 1px solid #CB7F00;
-    color: #cc6600;
+    color: #7F4F00;
+}
+
+#code {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 15px 10px;
+    text-align: center;
+    border: none;
 }
 
 input[type="submit"] {
@@ -74,6 +94,26 @@ input[type="submit"] {
 }
 
 @media only screen and (min-width: 1081px) {
+    #logos {
+        height: 50vh;
+        transition: all 0.12s linear;
+    }
+    #logos:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    img {
+        display: inline-block;
+        opacity: 0;
+        padding-top: 5vh;
+        height: 40vh;
+        padding-right: 1vw;
+        padding-left: 1vw;
+        transition: all 0.12s linear;
+    }
+    #form {
+        width: 50vw;
+        margin-top: 5vh;
+    }
     .left {
         float: left;
         width: 25vw;
@@ -84,15 +124,14 @@ input[type="submit"] {
         width: 25vw;
         margin-bottom: 5vh;
     }
-    #form {
-        width: 50vw;
-        margin-top: 17vh;
-    }
     .inp-txt {
-        margin: 5vh 0;
+        margin-bottom: 5vh;
         padding: 5px;
         width: 20vw;
         border-bottom: 1px solid black;
+    }
+    .inp-txt:focus {
+        border-bottom: 1px solid #CB7F00;
     }
     input[type="submit"] {
         width: 20vw;
@@ -111,11 +150,17 @@ input[type="submit"] {
         color: aliceblue;
         outline: none;
     }
+    .button {
+        margin-bottom: 20vh;
+    }
 }
 
 @media only screen and (max-width: 1080px) {
     hgroup {
         text-align: center;
+    }
+    #logos {
+        display: none;
     }
     .left {
         width: 96vw;
@@ -126,7 +171,6 @@ input[type="submit"] {
     }
     #form {
         width: 96vw;
-        margin-top: 17vh;
         padding: 0 2vw;
     }
     .inp-txt {
@@ -136,6 +180,9 @@ input[type="submit"] {
         border-radius: 20px;
         width: 96vw;
         background-color: #fff;
+    }
+    .inp-txt:focus {
+        border: 1px solid #CB7F00;
     }
     input[type="submit"] {
         width: 96vw;
