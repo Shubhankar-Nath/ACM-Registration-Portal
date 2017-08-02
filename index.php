@@ -43,17 +43,17 @@
             <article>
                 <center>
                     <form action="assets/functions/register.php" method="post" id="form">
-                        <input type="text" name="code" id="code" class="inp-txt" placeholder="Enter Unique Code Here" required />
+                        <input type="text" name="code" id="code" class="inp-txt" placeholder="Enter Unique Code Here" title="Enter the unique code provided to you to register" required />
                         <div class="left">
-                            <input type="text" name="name" class="inp-txt" placeholder="Name" required />
-                            <input type="text" name="name" class="inp-txt" placeholder="Branch" required />
-                            <input type="email" name="name" class="inp-txt" placeholder="Email ID" required />
+                            <input type="text" name="name" class="inp-txt" placeholder="Name*" title="Please enter your name" required />
+                            <input type="text" name="name" class="inp-txt" placeholder="Branch*" title="Please enter your Branch" required />
+                            <input type="email" name="name" class="inp-txt" placeholder="Email ID*" title="Please enter your Email-ID" required />
                         </div>
                         <div class="right">
-                            <input type="number" name="name" class="inp-txt" placeholder="Contact Number" required />
-                            <input type="number" name="name" class="inp-txt" placeholder="WhatsApp Number" />
-                            <select class="inp-txt" required>
-                                <option value="">Membership Duration</option>
+                            <input type="number" name="name" class="inp-txt" placeholder="Contact Number*" title="Please enter your Contact Number" maxlength="" required />
+                            <input type="number" name="name" class="inp-txt" placeholder="WhatsApp Number" title="Please enter your WhatsApp Number (if any)" maxlength="10" />
+                            <select class="inp-txt" title="Automatically set depending on your code" required>
+                                <option value="">Membership Duration*</option>
                                 <option>1 year membership</option>
                                 <option>4 years membership</option>
                             </select>
