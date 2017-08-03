@@ -1,0 +1,57 @@
+ *{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    font-size: 2.4vh;
+}
+
+header,
+hgroup,
+section,
+aside,
+article,
+footer {
+    display: block;
+}
+
+body {
+    background-color: #e5eff9;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+hgroup {
+    background-color: #2c5cec;
+    animation: bg 2s linear;
+    animation-iteration-count: infinite;
+    padding: 15px 10vw;
+}
+
+@keyframes bg {
+    0% {
+        background-color: #0051a3;
+    }
+    50% {
+        background-color: #003d7a;
+    }
+    100% {
+        background-color: #0051a3;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.brand {
+    color: #eee;
+    font-size: 4vh;
+}
+
+@media only screen and (max-width: 1080px) {
+    hgroup {
+        text-align: center;
+    }
+}
