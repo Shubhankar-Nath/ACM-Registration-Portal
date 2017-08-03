@@ -16,20 +16,34 @@
     $code = $_POST['code'];
 
     $con = mysqli_connect('localhost','root','','acm_registration');
-    $query = "select status from codes where code='$code';";
+    $query = "select count(*) from codes where code='$code';";
     $result = mysqli_query($con, $query);
     $row = mysqli_fetch_array($result);
-
-    if($row[0]!=0) {
-        $_SESSION['message'] = 'This code has already been used to register a member. For any discrepency, please contact UPES ACM/ACM-W Chapter Representatives.';
-
+    if($row[0] == 0) {
+        $_SESSION['message'] = 'Please don\'t try to tamper with the data.';
     }
     else {
-        $query = "insert into member_info VALUES('$code','$name','$branch',$year,'$email',$phone,$wa,$type);";
+        $query = "select count(*) from codes where code='$code' and type='$type';";
         $result = mysqli_query($con, $query);
-        $query = "UPDATE codes SET status = 1 WHERE code = '$code';";
-        $result = mysqli_query($con, $query);
-        $_SESSION['message'] = 'Registration complete. Thank you for enrolling with us. Welcome to ACM :)';
+        $row = mysqli_fetch_array($result);
+        if($row[0] == 0) $_SESSION['message'] = "Want a 4 year membership? Buy one from our chapter representatives, instead of tampering with HTTP headers. :)";
+        else {
+            $query = "select status from codes where code='$code';";
+            $result = mysqli_query($con, $query);
+            $row = mysqli_fetch_array($result);
+
+            if($row[0]!=0) {
+                $_SESSION['message'] = 'This code has already been used to register a member. For any discrepency, please contact UPES ACM/ACM-W Chapter Representatives.';
+
+            }
+            else {
+                $query = "insert into member_info VALUES('$code','$name','$branch',$year,'$email',$phone,$wa,$type);";
+                $result = mysqli_query($con, $query);
+                $query = "UPDATE codes SET status = 1 WHERE code = '$code';";
+                $result = mysqli_query($con, $query);
+                $_SESSION['message'] = 'Registration complete. Thank you for enrolling with us. Welcome to ACM :)';
+            }
+        }
     }
     header('location: ../../../verify');
 ?>
