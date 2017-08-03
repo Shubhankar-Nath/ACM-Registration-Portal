@@ -136,10 +136,13 @@ input[type="submit"] {
     }
     input[type="submit"] {
         width: 96vw;
-        height: 5vh;
+        height: 8vh;
         background-color: #0051a3;
         color: aliceblue;
         padding: 8px;
         border-radius: 10px;
+    }
+    .button {
+        margin-bottom: 2vh;
     }
 }
